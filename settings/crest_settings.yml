@@ -1,0 +1,7 @@
+crest_executable: 'module load crest/2.12'
+xtb_executable: ''
+crest_scratch_dir: "/scratch/general/vast/$USER/$SLURM_JOB_ID"
+slurm_partition: "notchpeak"
+slurm_account: "sigman"
+slurm_walltime: 24
+slurm_nproc: 20
