@@ -3,8 +3,8 @@
 Scripts modified from Bisphosphine ligand workflow from Jamie Cadge and Sierra Hart (GitHub/SigmanGroup/PP_conformers)
 
 Series of Python scripts to run the conformational search and generate for bisphosphine ligands. Complexes currently supported:
-- Palladium(II) dichloride complexes, (P^P)PdCl2
-- Zinc(II) dichloride complexes, (P^P)ZnCl2
+- Palladium(II) dichloride complexes, (D^D)PdCl2
+- Zinc(II) dichloride complexes, (D^D)ZnCl2
 
 ## 1. Setup
 
@@ -14,7 +14,7 @@ Series of Python scripts to run the conformational search and generate for bisph
 
 Create a new conda environment using the environment.yml file:
 
-`conda env create -n PP_conformers --file environment.yml`
+`conda env create -n bidentate_calculations --file environment.yml`
 
 **Using pip:**
 
@@ -28,14 +28,14 @@ Then, install the required packages:
 
 ### 1.2 Other system requirements
 
-- [CREST 2.12](https://crest-lab.github.io/crest-docs/page/installation/install_basic.html) (Need to specify path or module to CREST executable in PP_conformer_settings.yml).
-- [xTB 6.4.0](https://xtb-docs.readthedocs.io/en/latest/setup.html#setup-and-installation) (Need to specify path or module to xTB executable in PP_conformer_settings.yml).
+- [CREST 2.12](https://crest-lab.github.io/crest-docs/page/installation/install_basic.html) (Need to specify path or module to CREST executable in the settings/crest_settings.yml).
+- [xTB 6.4.0](https://xtb-docs.readthedocs.io/en/latest/setup.html#setup-and-installation) (Need to specify path or module to xTB executable in crest_settings.yml).
 - [OpenBabel 2.4.1 or higher](https://anaconda.org/conda-forge/openbabel)
   (To use as part of the conda environment, install separately to the environment using `conda install -c conda-forge openbabel`).
 
 ### 1.3 PP_conformer settings
 
-All job submission and directory path settings are stored in the PP_conformer_settings.yml file and should be adjusted 
+All job submission and directory path settings are stored in the settings/crest_settings.yml file and should be adjusted 
 based on system settings:
 
 - **crest_executable**: Location or module containing the CREST executable
@@ -73,11 +73,11 @@ automatically applied. Currently supported metal centers are PdCl2 and ZnCl2.
 This script analyzes the conformers generated from the find_conformers.py script:
 
 - Checks for normal termination of the CREST program. Also checks for any structural changes using the before and after 
-molecular formulae as well as the P–P bond distance.
+molecular formulae as well as the D–D (donor atom-donor atom) bond distance.
 - Splits the clustered conformer ensemble into individual files, where the suffix "_1" is given to the lowest energy 
 conformer 
 and so on. 
-- Selects conformers based on P–M–P bite angle (y-equidistant) and the lowest energy GFN2-xTB conformer. 
+- Selects conformers based on D-M–D (donor atom-metal–donor atom) bite angle (y-equidistant) and the lowest energy GFN2-xTB conformer. 
 Gaussian16 optimization .com input files are generated for the selected conformers (PBE-D3(BJ)/def2SVP level of theory).
 
 Conformers may be analyzed individually by specifying the Ligand ID as an argument:
@@ -93,7 +93,7 @@ For help, type `python analyze_conformers.py --help` or `python analyze_conforme
 Generated Gaussian16 .com files should be run using a separate submission script.
 
 > **Note:**
-> P–P bond distances and P–M–P are determined using MORFEUS (for details, see [here](https://digital-chemistry-laboratory.github.io/morfeus/)). Conformers from the CREST output 
+> D-D bond distances and D-M-D are determined using MORFEUS (for details, see [here](https://digital-chemistry-laboratory.github.io/morfeus/)). Conformers from the CREST output 
 > .xyz file are split using OpenBabel 2.4.1 (for details, see "Other system requirements" section).
 
 ## 4. Generate Gaussian16 single point energy inputs
