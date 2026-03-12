@@ -1,13 +1,13 @@
 from setuptools import setup
 
 setup(
-    name='PP_conformers',
+    name='pp_pn_nn_calculations',
     version='0',
-    packages=['pp_conformers'],
+    packages=['bidentate_conformers'],
     url='',
     license='',
     author='Jamie A. Cadge and Sierra Hart',
-    author_email='j.cadge@icloud.com',
+    author_email='sierrahart25@gmail.com',
     description='',
     python_requires=">=3.8",
     install_requires=["mdanalysis==2.2.0", "morfeus-ml==0.7.2",
