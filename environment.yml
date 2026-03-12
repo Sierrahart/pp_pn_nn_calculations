@@ -1,0 +1,12 @@
+name: bidentate_calculations
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - mdanalysis=2.2.0
+  - morfeus-ml=0.7.2
+  - numpy=1.24.4
+  - pandas=2.0.3
+  - python=3.8.17
+  - pyyaml=6.0
+  - yaml=0.2.5
