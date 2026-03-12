@@ -1,30 +1,35 @@
 import argparse
 import warnings
 from pathlib import Path
-from pp_conformers import conformers as conf
-from pp_conformers import rmsd
-from pp_conformers import dft
-from pp_conformers import utils
+from conf_search_tools import conformers as conf
+from conf_search_tools import rmsd
+from conf_search_tools import dft
+from conf_search_tools import utils
 
 warnings.filterwarnings("ignore")
 
 DESCRIPTION = """
 
 
-        ╔════════════════════════════════════════════════════════════════════╗
-        ║   ____   ____    _      ___  ____   ____      _     ____  __   __  ║
-        ║  |  _ \ |  _ \  | |    |_ _|| __ ) |  _ \    / \   |  _ \ \ \ / /  ║
-        ║  | |_) || |_) | | |     | | |  _ \ | |_) |  / _ \  | |_) | \ V /   ║
-        ║  |  __/ |  __/  | |___  | | | |_) ||  _ <  / ___ \ |  _ <   | |    ║
-        ║  |_|    |_|     |_____||___||____/ |_| \_\/_/   \_\|_| \_\  |_|    ║
-        ║                                                                    ║
-        ╚════════════════════════════════════════════════════════════════════╝
+    ╔══════════════════════════════════════════════════════════════════════════════╗
+    ║   ____    ___    ____      _      ___  ____   ____      _     ____  __   __  ║
+    ║  | __ )  |_ _|  |  _ \    | |    |_ _|| __ ) |  _ \    / \   |  _ \ \ \ / /  ║
+    ║  |  _ \   | |   | | \ |   | |     | | |  _ \ | |_) |  / _ \  | |_) | \ V /   ║
+    ║  | |_) |  | |   | |_/ |   | |___  | | | |_) ||  _ <  / ___ \ |  _ <   | |    ║
+    ║  |____/  |___|  |____/    |_____||___||____/ |_| \_\/_/   \_\|_| \_\  |_|    ║
+    ║                                                                              ║
+    ╚══════════════════════════════════════════════════════════════════════════════╝
 
-                          -- BISPHOSPHINE LIGAND LIBRARY --
-                               Conformer Analysis Tool
-
+                          -- BIDENTATE LIGAND LIBRARY --
+                              Conformer Analysis Tool
 
 """
+
+
+ 
+
+
+
 
 
 def analyze_conformer(ligand_id: str, results_dir: Path, dft_inputs_dir: Path):

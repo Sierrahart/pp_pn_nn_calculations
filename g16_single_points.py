@@ -1,26 +1,27 @@
 import argparse
 from pathlib import Path
-from pp_conformers import dft
+from conf_search_tools import dft
 
 # TODO make a function here which analyzes the sp outputs - will need to change the name of the script
 
 DESCRIPTION = """
 
 
-        ╔════════════════════════════════════════════════════════════════════╗
-        ║   ____   ____    _      ___  ____   ____      _     ____  __   __  ║
-        ║  |  _ \ |  _ \  | |    |_ _|| __ ) |  _ \    / \   |  _ \ \ \ / /  ║
-        ║  | |_) || |_) | | |     | | |  _ \ | |_) |  / _ \  | |_) | \ V /   ║
-        ║  |  __/ |  __/  | |___  | | | |_) ||  _ <  / ___ \ |  _ <   | |    ║
-        ║  |_|    |_|     |_____||___||____/ |_| \_\/_/   \_\|_| \_\  |_|    ║
-        ║                                                                    ║
-        ╚════════════════════════════════════════════════════════════════════╝
+    ╔══════════════════════════════════════════════════════════════════════════════╗
+    ║   ____    ___    ____      _      ___  ____   ____      _     ____  __   __  ║
+    ║  | __ )  |_ _|  |  _ \    | |    |_ _|| __ ) |  _ \    / \   |  _ \ \ \ / /  ║
+    ║  |  _ \   | |   | | \ |   | |     | | |  _ \ | |_) |  / _ \  | |_) | \ V /   ║
+    ║  | |_) |  | |   | |_/ |   | |___  | | | |_) ||  _ <  / ___ \ |  _ <   | |    ║
+    ║  |____/  |___|  |____/    |_____||___||____/ |_| \_\/_/   \_\|_| \_\  |_|    ║
+    ║                                                                              ║
+    ╚══════════════════════════════════════════════════════════════════════════════╝
 
-                          -- BISPHOSPHINE LIGAND LIBRARY --
-                 Gaussian16 Single-Point Correction Calculation Tool
-
+                          -- BIDENTATE LIGAND LIBRARY --
+                Gaussian Single Point Job Generation and Analysis Tool
 
 """
+
+
 
 
 def generate_spe_coms(dft_opt_dir: Path, dft_sp_dir: Path):
