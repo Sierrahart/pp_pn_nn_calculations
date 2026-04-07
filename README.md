@@ -1,6 +1,6 @@
 # Workflow scripts for PP, PN, and NN Bidentate Ligand Calculations
 
-Scripts modified from Bisphosphine ligand workflow from Jamie Cadge and Sierra Hart (GitHub/SigmanGroup/PP_conformers)
+Scripts constructed for bisphosphine ligand libray construction (with Jamie Cadge), modified for PN, NN ligands
 
 Series of Python scripts to run the conformational search and generate for bisphosphine ligands. Complexes currently supported:
 - Palladium(II) dichloride complexes, (D^D)PdCl2
